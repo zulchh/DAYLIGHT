@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DAYLIGHT | Mi espacio</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <main class="dashboard-container">
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <span class="sun-icon">☀</span>
+                <h2>DAYLIGHT</h2>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item active">⌂ Inicio</a>
+                <a href="#mis-tareas" class="menu-item">▤ Mis tareas</a>
+            </nav>
+
+            <button id="logoutButton" class="logout-button">
+                Cerrar sesión
+            </button>
+
+        </aside>
+
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <section class="dashboard-content">
+
+            <header class="dashboard-header">
+                <div>
+                    <p class="dashboard-date">TU ESPACIO PERSONAL</p>
+                    <h1>¡Hola, <span id="userName">bienvenida</span>! ☀️</h1>
+                    <p>Hoy es un buen día para avanzar a tu ritmo.</p>
+                </div>
+            </header>
+
+
+            <!-- RESUMEN DE TAREAS -->
+            <section class="stats-container">
+
+                <article class="stat-card">
+                    <p>Total de tareas</p>
+                    <h2 id="totalTasks">0</h2>
+                </article>
+
+                <article class="stat-card">
+                    <p>Pendientes</p>
+                    <h2 id="pendingTasks">0</h2>
+                </article>
+
+                <article class="stat-card">
+                    <p>En progreso</p>
+                    <h2 id="progressTasks">0</h2>
+                </article>
+
+                <article class="stat-card">
+                    <p>Completadas</p>
+                    <h2 id="completedTasks">0</h2>
+                </article>
+
+            </section>
+
+
+            <!-- SECCIÓN DE TAREAS -->
+            <section class="tasks-section" id="mis-tareas">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Mis tareas</h2>
+                        <p>Organiza tus pendientes y haz espacio para nuevas ideas.</p>
+                    </div>
+                </div>
+
+
+                <!-- FORMULARIO PARA CREAR TAREAS -->
+                <div class="task-form-card">
+
+                    <h3>Agregar nueva tarea</h3>
+
+                    <form id="taskForm">
+
+                        <div class="input-group">
+                            <label for="taskTitle">Título</label>
+                            <input type="text" id="taskTitle"
+                                placeholder="¿Qué necesitas hacer?" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="taskDescription">Descripción</label>
+                            <textarea id="taskDescription"
+                                placeholder="Agrega algunos detalles..."></textarea>
+                        </div>
+
+                        <div class="task-fields">
+
+                            <div class="input-group">
+                                <label for="taskDate">Fecha de vencimiento</label>
+                                <input type="date" id="taskDate">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="taskPriority">Prioridad</label>
+                                <select id="taskPriority">
+                                    <option value="Baja">Baja</option>
+                                    <option value="Media" selected>Media</option>
+                                    <option value="Alta">Alta</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="login-button">
+                            + Agregar tarea
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- LISTA DE TAREAS -->
+                <div class="task-list-card">
+
+                    <h3>Tu lista de actividades</h3>
+
+                    <div class="task-filters">
+                        <button class="filter-button active" data-filter="Todas">Todas</button>
+                        <button class="filter-button" data-filter="Pendiente">Pendientes</button>
+                        <button class="filter-button" data-filter="En progreso">En progreso</button>
+                        <button class="filter-button" data-filter="Completada">Completadas</button>
+                    </div>
+
+                    <div id="taskList">
+                        <p class="empty-message">
+                            Todavía no tienes tareas. ¡Agrega tu primera actividad! ♡
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>
